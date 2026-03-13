@@ -19,6 +19,7 @@
 
   <!-- Interactive Background Glow -->
   <div class="glow-bg"></div>
+  <div class="scroll-progress"></div>
 
   <!-- Navigation -->
   <nav class="nav">
@@ -26,7 +27,7 @@
       <div class="logo magnetic" data-strength="15">CHETHAN<span class="dot">.</span></div>
       <div class="nav-links">
         <a href="#expertise" class="magnetic" data-strength="20">Expertise</a>
-        <a href="#services" class="magnetic" data-strength="20">Work</a>
+        <a href="#work" class="magnetic" data-strength="20">Work</a>
         <a href="#contact" class="btn btn-outline magnetic" data-strength="30">Let's Talk</a>
       </div>
     </div>
@@ -37,7 +38,7 @@
     <section class="hero" id="home">
       <div class="container hero-container">
 
-        <div class="hero-content">
+        <div class="hero-content reveal">
           <div class="hero-badge fade-up stagger-1">Systematic Growth & AI</div>
           <h1 class="hero-title fade-up stagger-2">
             Engineering <br>
@@ -48,7 +49,7 @@
             and high-conversion design to scale creators to millions.
           </p>
           <div class="hero-cta fade-up stagger-4">
-            <a href="#services" class="btn btn-solid magnetic" data-strength="40">View Arsenal</a>
+            <a href="#expertise" class="btn btn-solid magnetic" data-strength="40">View Arsenal</a>
             <a href="#contact" class="btn btn-ghost link-hover magnetic" data-strength="20">Collaborate ↗</a>
           </div>
         </div>
@@ -101,157 +102,111 @@
       </div>
     </div>
 
-    <!-- Dynamic Flex Accordion Gallery -->
-    <section class="services-accordion-section" id="services">
+    <!-- Bento Arsenal Grid -->
+    <section class="arsenal-grid-section" id="expertise">
       <div class="container">
-        <h2 class="section-title fade-up">My <span class="gradient-text">Arsenal</span></h2>
+        <div class="arsenal-header fade-up">
+          <div class="arsenal-badge">EXPERT SYSTEMS</div>
+          <h2 class="section-title">My <span class="gradient-text">Arsenal</span></h2>
+        </div>
 
-        <div class="accordion-gallery fade-up" style="--d: 0.2s">
-
-          <div class="accordion-item active">
-            <div class="item-bg"></div>
-            <div class="item-visual">
-              <div class="huge-number">01</div>
-              <div class="tech-circle" style="--d: 0s"><span></span><span></span></div>
-            </div>
-            <div class="item-content">
-              <div class="icon">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" class="animated-icon">
+        <div class="arsenal-bento">
+          <!-- Card 1: Large -->
+          <div class="bento-card large fade-up" style="--d: 0.1s">
+            <div class="card-glass"></div>
+            <div class="card-grid-bg"></div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
                   <line x1="7" y1="2" x2="7" y2="22"></line>
                   <line x1="17" y1="2" x2="17" y2="22"></line>
-                  <line x1="2" y1="12" x2="22" y2="12"></line>
-                  <line x1="2" y1="7" x2="7" y2="7"></line>
-                  <line x1="2" y1="17" x2="7" y2="17"></line>
-                  <line x1="17" y1="17" x2="22" y2="17"></line>
-                  <line x1="17" y1="7" x2="22" y2="7"></line>
                 </svg>
               </div>
-              <div class="text-content">
+              <div class="card-text">
                 <h3>High-Retention Editing</h3>
-                <p>Dynamic cuts, precise motion graphics, and audio mixing engineered specifically for the YouTube
-                  algorithm to eliminate drop-off curves.</p>
+                <p>Dynamic cuts and audio mixing engineered specifically for the YouTube algorithm to eliminate drop-off curves and maximize watch time.</p>
               </div>
             </div>
-            <div class="item-glow"></div>
+            <div class="card-corner"></div>
           </div>
 
-          <div class="accordion-item">
-            <div class="item-bg"></div>
-            <div class="item-visual">
-              <div class="huge-number">02</div>
-              <div class="tech-circle" style="--d: -5s"><span></span><span></span></div>
-            </div>
-            <div class="item-content">
-              <div class="icon">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" class="animated-icon">
+          <!-- Card 2 -->
+          <div class="bento-card fade-up" style="--d: 0.2s">
+            <div class="card-glass"></div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M12 2v20"></path>
                   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                 </svg>
               </div>
-              <div class="text-content">
-                <h3>AI-Driven Blueprints</h3>
-                <p>Utilizing GPT models and search velocity data to identify blue-ocean topics before they peak.</p>
+              <div class="card-text">
+                <h3>AI Blueprints</h3>
+                <p>Identifying emerging blue-ocean topics before they peak.</p>
               </div>
             </div>
-            <div class="item-glow"></div>
+            <div class="card-corner"></div>
           </div>
 
-          <div class="accordion-item">
-            <div class="item-bg"></div>
-            <div class="item-visual">
-              <div class="huge-number">03</div>
-              <div class="tech-circle" style="--d: -10s"><span></span><span></span></div>
-            </div>
-            <div class="item-content">
-              <div class="icon">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" class="animated-icon">
+          <!-- Card 3 -->
+          <div class="bento-card fade-up" style="--d: 0.3s">
+            <div class="card-glass"></div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                 </svg>
               </div>
-              <div class="text-content">
-                <h3>15-Second Hooks</h3>
-                <p>Scripting psychological opening loops that lock viewers in.</p>
+              <div class="card-text">
+                <h3>15s Hooks</h3>
+                <p>Psychological opening loops.</p>
               </div>
             </div>
-            <div class="item-glow"></div>
+            <div class="card-corner"></div>
           </div>
 
-          <div class="accordion-item">
-            <div class="item-bg"></div>
-            <div class="item-visual">
-              <div class="huge-number">04</div>
-              <div class="tech-circle" style="--d: -15s"><span></span><span></span></div>
-            </div>
-            <div class="item-content">
-              <div class="icon">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" class="animated-icon">
+          <!-- Card 4: Wide -->
+          <div class="bento-card wide fade-up" style="--d: 0.4s">
+            <div class="card-glass"></div>
+            <div class="card-grid-bg"></div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
                   <line x1="8" y1="21" x2="16" y2="21"></line>
-                  <line x1="12" y1="17" x2="12" y2="21"></line>
                 </svg>
               </div>
-              <div class="text-content">
+              <div class="card-text">
                 <h3>Creator Landing Pages</h3>
-                <p>High-converting sites built in HTML/CSS/JS for brand deals or courses.</p>
+                <p>High-converting sites built in HTML/CSS/JS for brand deals or course launches.</p>
               </div>
             </div>
-            <div class="item-glow"></div>
+            <div class="card-corner"></div>
           </div>
 
-          <div class="accordion-item">
-            <div class="item-bg"></div>
-            <div class="item-visual">
-              <div class="huge-number">05</div>
-              <div class="tech-circle" style="--d: -20s"><span></span><span></span></div>
-            </div>
-            <div class="item-content">
-              <div class="icon">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" class="animated-icon">
+          <!-- Card 5 -->
+          <div class="bento-card fade-up" style="--d: 0.5s">
+            <div class="card-glass"></div>
+            <div class="card-content">
+              <div class="card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                 </svg>
               </div>
-              <div class="text-content">
-                <h3>End-to-End Strategy</h3>
-                <p>Mapping the exact content cadence, shorts-to-longform funnels, and monetization roadmap.</p>
+              <div class="card-text">
+                <h3>Roadmap</h3>
+                <p>Monetization strategy.</p>
               </div>
             </div>
-            <div class="item-glow"></div>
+            <div class="card-corner"></div>
           </div>
-
-          <div class="accordion-item">
-            <div class="item-bg"></div>
-            <div class="item-visual">
-              <div class="huge-number">06</div>
-              <div class="tech-circle" style="--d: -25s"><span></span><span></span></div>
-            </div>
-            <div class="item-content">
-              <div class="icon">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" class="animated-icon">
-                  <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-                  <polyline points="13 2 13 9 20 9"></polyline>
-                  <line x1="12" y1="18" x2="12" y2="12"></line>
-                  <line x1="9" y1="15" x2="15" y2="15"></line>
-                </svg>
-              </div>
-              <div class="text-content">
-                <h3>Audience Growth</h3>
-                <p>Building community momentum across your most profitable platform channels.</p>
-              </div>
-            </div>
-            <div class="item-glow"></div>
-          </div>
-
         </div>
       </div>
-      <!-- Dynamic Arsenal-Themed Video Accordion -->
-      <section class="services-accordion-section video-accordion-section offset-top" id="work">
+    </section>
+
+    <!-- Dynamic Arsenal-Themed Video Accordion -->
+    <section class="video-accordion-section" id="work">
         <div class="container">
           <div class="reels-header fade-up" style="margin-bottom: 2rem;">
             <h2 class="section-title">High-Performing <span class="gradient-text">Edits</span></h2>
@@ -430,7 +385,7 @@
             </p>
           </div>
 
-          <div class="restaurant-grid">
+          <div class="restaurant-grid reveal">
             <!-- Strategy Column -->
             <div class="strategy-map fade-up" style="--d: 0.1s">
               <h3
@@ -551,7 +506,7 @@
               <div class="tech-tag" style="margin-top: 2rem;">ESSENTIAL</div>
             </div>
 
-            <div class="menu-item" style="border-color: var(--accent); background: #fff;">
+            <div class="menu-item" style="border-color: var(--accent); background: var(--bg-secondary);">
               <div class="menu-item-header">
                 <h3 style="color: var(--accent);">Growth Package</h3>
                 <span class="menu-item-price">₹6000</span>
@@ -569,12 +524,11 @@
 
         </div>
       </section>
-
       <!-- Contact & Footer -->
       <section class="contact-section" id="contact">
         <div class="container fade-up">
           <h2 class="giant-text">Let's Build.</h2>
-          <div class="command-center-grid">
+          <div class="command-center-grid stagger-reveal">
             <a href="https://wa.me/918095406516" target="_blank" class="command-card magnetic" data-strength="15">
               <div class="card-header">
                 <span class="status-dot"></span>
@@ -590,7 +544,6 @@
               </div>
               <div class="card-scanner"></div>
             </a>
-
             <a href="https://www.instagram.com/chethan_gxwda_/" target="_blank" class="command-card magnetic"
               data-strength="15">
               <div class="card-header">
@@ -640,7 +593,6 @@
   <div class="cursor-trail"></div>
   <div class="cursor-trail"></div>
   <div class="cursor-trail"></div>
-
   <script src="script.js"></script>
 </body>
 
