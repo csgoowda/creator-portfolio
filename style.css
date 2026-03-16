@@ -110,6 +110,10 @@ body.loading {
   overflow: hidden;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 body.loaded {
   opacity: 1;
 }
@@ -502,9 +506,38 @@ p {
   width: 0%;
   height: 3px;
   background: var(--accent-gradient);
-  z-index: 99999;
+  z-index: 100000;
   box-shadow: 0 0 15px var(--accent-glow);
   transition: width 0.1s linear;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.menu-toggle .line {
+  width: 100%;
+  height: 2px;
+  background: var(--text-main);
+  transition: all 0.3s var(--ease);
+  border-radius: 2px;
+}
+
+.menu-toggle.active .line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active .line:nth-child(2) {
+  transform: translateY(-9px) rotate(-45deg);
 }
 
 .logo {
@@ -1692,17 +1725,73 @@ textarea:focus {
 @media screen and (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 4rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
   }
 
   .hero-visual {
     display: none;
   }
+
+  .hero-badge, .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .nav-wrapper {
+    margin: 0.75rem 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+
   .nav-links {
-    display: none;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background: var(--glass-surface);
+    backdrop-filter: var(--glass-blur);
+    flex-direction: column;
+    padding: 10vh 2rem 5vh;
+    gap: 2rem;
+    transition: all 0.6s var(--ease);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 90;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .nav-links.active {
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero {
+    padding-top: 20vh;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
   }
 
   .contact-grid {
@@ -1715,8 +1804,8 @@ textarea:focus {
   }
 
   .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .modal-content {
@@ -1737,10 +1826,43 @@ textarea:focus {
     font-size: 0.65rem;
   }
 
-  /* Accordion Response */
+  /* Accordion Response: Converted back to Grid for Mobile to show all videos */
   .accordion-gallery {
-    flex-direction: column;
-    height: 800px;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    height: auto !important;
+    gap: 1rem !important;
+  }
+
+  .accordion-item {
+    height: auto !important;
+    aspect-ratio: 9/16 !important;
+    width: 100% !important;
+    flex: none !important;
+    border-radius: 16px !important;
+  }
+
+  /* Remove active sizing on mobile grid */
+  .accordion-item.active {
+    height: auto !important;
+  }
+
+  .huge-number {
+    font-size: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+    text-align: center;
+  }
+
+  .reels-header, .arsenal-header, .restaurant-intro, .web-dev-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .container {
+    padding: 0 1.5rem;
   }
 }
 
@@ -1958,58 +2080,7 @@ textarea:focus {
   box-shadow: 0 0 10px var(--accent-glow);
 }
 
-/* Digital Menu Pricing */
-.digital-menu {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 4rem;
-}
 
-.menu-item {
-  border: 1px solid var(--glass-border);
-  padding: 3rem;
-  border-radius: 24px;
-  background: var(--glass-surface);
-  backdrop-filter: var(--glass-blur);
-  transition: all 0.4s var(--ease);
-  position: relative;
-  box-shadow: var(--shadow-md);
-}
-
-.menu-item:hover {
-  border-color: var(--accent);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-5px);
-}
-
-.menu-item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid var(--glass-border);
-  padding-bottom: 1rem;
-}
-
-.menu-item-price {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-main);
-}
-
-.menu-features {
-  list-style: none;
-  padding: 0;
-}
-
-.menu-features li {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 0.8rem;
-  display: flex;
-  justify-content: space-between;
-}
 
 /* Reels Showcase */
 .reels-showcase {
@@ -2060,10 +2131,77 @@ textarea:focus {
   opacity: 1;
 }
 
-@media (max-width: 968px) {
+/* --- Web Dev Section: Custom Digital Craft UI --- */
+.web-dev-section {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  background: var(--bg-main);
+}
 
-  .restaurant-grid,
-  .digital-menu {
+.web-dev-header {
+  max-width: 800px;
+  margin-bottom: 5rem;
+}
+
+.web-dev-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.web-dev-cta-box {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  padding: 5rem;
+  text-align: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
+  margin-top: 3rem;
+  backdrop-filter: var(--glass-blur);
+}
+
+.cta-glass {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.1), transparent 60%);
+  pointer-events: none;
+}
+
+.cta-content h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 968px) {
+  .web-dev-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .web-dev-grid {
+    grid-template-columns: 1fr;
+  }
+  .web-dev-cta-box {
+    padding: 3rem 1.5rem;
+  }
+  .cta-content h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .restaurant-grid {
     grid-template-columns: 1fr;
   }
 }

@@ -244,6 +244,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // 10. Mobile Menu Logic
+    const initMobileMenu = () => {
+        const toggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelectorAll('.nav-links a');
+
+        if (!toggle || !navLinks) return;
+
+        const toggleMenu = () => {
+            toggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        };
+
+        toggle.addEventListener('click', toggleMenu);
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                toggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+    };
+
     // Initialization
     initScrollReveals();
     initCursor();
@@ -253,6 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTyping();
     initScrollProgress();
     initScanners();
+    initMobileMenu();
 
     // Accordion
     document.querySelectorAll('.accordion-item').forEach(item => {
