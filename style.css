@@ -2495,3 +2495,27 @@ textarea:focus {
     display: block !important;
   }
 }
+
+
+/* Mobile Header Refinements */
+@media (min-width: 769px) {
+  .mobile-break { display: none; }
+}
+
+@media (max-width: 768px) {
+  .mobile-break { display: block; }
+  
+  .nav-wrapper {
+    margin: 0.5rem !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 12px !important;
+  }
+  
+  .logo {
+    font-size: 1.2rem !important;
+  }
+  
+  .hero {
+    padding-top: 10vh !important;
+  }
+}
