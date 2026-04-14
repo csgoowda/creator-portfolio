@@ -1,10 +1,10 @@
 :root {
   /* --- Unique Cinematic Palette (Animated) --- */
-  --accent-1: #3b82f6; /* Executive Blue */
-  --accent-2: #6366f1; /* Professional Indigo */
-  --accent-3: #0ea5e9; /* Positive Sky Blue */
+  --accent-1: #8b5cf6; /* Vibrant Violet */
+  --accent-2: #ec4899; /* Hot Pink */
+  --accent-3: #c084fc; /* Light Purple */
   --accent-gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  --accent-glow: rgba(59, 130, 246, 0.4);
+  --accent-glow: rgba(139, 92, 246, 0.4);
   --accent: var(--accent-1);
 
   --bg-main: #ffffff;
@@ -2372,5 +2372,126 @@ textarea:focus {
 @media (max-width: 968px) {
   .restaurant-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================================
+   MOBILE OPTIMIZATION & ENHANCED INTERACTIVITY
+   ======================================================== */
+@media (max-width: 768px) {
+  :root {
+    --spacing: 4rem;
+  }
+  
+  /* Typography tweaks */
+  h1 { font-size: 2.5rem !important; }
+  h2 { font-size: 2rem !important; }
+  .hero-container { grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; }
+  .hero-visual { height: 300px; } 
+  .abstract-globe { width: 200px; height: 200px; }
+  
+  /* Sections */
+  section { padding: 4rem 0 !important; }
+  .restaurant-intro, .web-dev-header, .arsenal-header { margin-bottom: 2rem !important; }
+  
+  /* Navbar */
+  .nav-wrapper { margin: 1rem; padding: 1rem; flex-wrap: wrap; border-radius: 20px;}
+  .nav-links { 
+    display: none; 
+    width: 100%; 
+    flex-direction: column; 
+    gap: 1.5rem; 
+    margin-top: 1rem; 
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .nav-links.active { display: flex; animation: slideInUp 0.4s var(--ease); }
+  .menu-toggle { display: flex; }
+  
+  /* Handmade images */
+  .handmade-icons > div { width: 100% !important; margin-bottom: 1rem; }
+  .handmade-icons img { width: 100% !important; height: auto !important; aspect-ratio: 1/1; }
+  
+  /* Grids */
+  .command-center-grid, .arsenal-bento { grid-template-columns: 1fr !important; }
+  .reels-grid-mini, .video-grid { grid-template-columns: 1fr !important; }
+  
+  /* Video Accordion rewrite for mobile */
+  .video-accordion-section .accordion-gallery { 
+    display: flex; 
+    flex-direction: column; 
+    height: auto; 
+    gap: 1rem; 
+  }
+  .accordion-item { height: 120px !important; width: 100% !important; flex: none !important; border-radius: 12px; }
+  .accordion-item.active { height: 350px !important; width: 100% !important; }
+}
+
+/* Fix global custom cursor breaking mobile touches */
+@media (pointer: coarse), (hover: none) {
+  body, html, * { cursor: auto !important; }
+  .cursor-dot, .cursor-outline, .cursor-trail { display: none !important; }
+}
+
+/* Touch Interactions Enhance */
+.btn-solid:active, .command-card:active, .magnetic:active { 
+  transform: scale(0.96) !important; 
+  transition: transform 0.1s;
+}
+
+
+
+@media (max-width: 768px) {
+  .restaurant-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .strategy-map {
+    padding: 1.5rem !important;
+  }
+  .strategy-step {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .step-day {
+    min-width: auto;
+    padding-top: 0;
+  }
+  .services-column {
+    margin-top: 2rem;
+  }
+  .culinary-item {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+/* Masonry Gallery Custom CSS */
+@media (min-width: 769px) {
+  .featured-card {
+    transform: translateY(40px);
+  }
+}
+@media (max-width: 768px) {
+  .featured-card {
+    transform: translateY(0);
+  }
+  .handmade-gallery-wrapper {
+      margin-top: 1rem !important;
+  }
+}
+
+/* Desktop/Mobile display toggles for Culinary Section */
+.mobile-only {
+  display: none !important;
+}
+
+@media (max-width: 968px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
   }
 }
